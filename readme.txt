@@ -5,7 +5,7 @@ Requires at least: 3.1
 Tested up to: 4.0.1
 Stable tag: trunk
 License: MIT License
-License URI:
+License URI: https://github.com/evnix/wordpress-codoforum-sso/blob/master/License.txt
 
 Integrates Codoforum forum software with WordPress using SSO(Single Sign On)
 
