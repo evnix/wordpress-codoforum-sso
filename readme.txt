@@ -1,4 +1,4 @@
-=== wordpress-codoforum-sso ===
+=== codoforum-sso ===
 Contributors: evnix 
 Tags: SSO, forum
 Requires at least: 3.1

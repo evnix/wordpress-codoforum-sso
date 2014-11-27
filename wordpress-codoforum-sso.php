@@ -1,10 +1,10 @@
 <?php
 /**
- * @package wordpress-codoforum-sso
+ * @package codoforum-sso
  * @version 1.0
  */
 /*
-  Plugin Name: wordpress-codoforum-sso
+  Plugin Name: codoforum-sso
   Description: This is a wordpress plugin to integrate wordpress with codoforum.
   Author: Codologic
   Version: 1.0
@@ -49,11 +49,11 @@ function codoforum_options_page() {
             <p>Note: The values below must match with values you entered in Codoforum -> Admin -> Plugins -> Single Sign On ->Settings</p>
             <table class="form-table">
                 <tr valign="top">
-                    <th scope="row"><label for="codoforum_clientid">SSO Client ID:</label></th>
+                    <th scope="row"><label for="codoforum_clientid">SSO Client ID: </label></th>
                     <td><input type="text" id="codoforum_clientid" name="codoforum_clientid" value="<?php echo get_option('codoforum_clientid'); ?>" /></td>
                 </tr>
                 <tr valign="top">
-                    <th scope="row"><label for="codoforum_secret">API Filter</label></th>
+                    <th scope="row"><label for="codoforum_secret">Secret: </label></th>
                     <td><input type="text" id="codoforum_secret" name="codoforum_secret" value="<?php echo get_option('codoforum_secret'); ?>" /></td>
                 </tr>
             </table>
