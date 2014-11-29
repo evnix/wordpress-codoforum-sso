@@ -11,7 +11,7 @@ Integrates Codoforum forum software with WordPress using SSO(Single Sign On)
 
 == Description ==
 
-Codoforum is a modern forum software built for better user engagement.
+<a href="https://codoforum.com">Codoforum</a> is a modern forum software built for better user engagement.
 wordpress-codoforum-sso plugin allows you to integrate this forum with your wordpress website.
 It uses SSO, this means, users once logged into your website will be automatically logged into codoforum.
 
