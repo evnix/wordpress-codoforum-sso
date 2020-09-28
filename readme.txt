@@ -2,7 +2,7 @@
 Contributors: evnix 
 Tags: SSO, forum
 Requires at least: 3.1
-Tested up to: 4.0.1
+Tested up to: 4.9.2
 Stable tag: trunk
 License: MIT License
 License URI: https://github.com/evnix/wordpress-codoforum-sso/blob/master/License.txt
@@ -22,3 +22,25 @@ Extract the zip file and just drop the contents in the wp-content/plugins/ direc
 Go to Settings and Enter the Client Id and Secret. (This must be same as what you have entered in codofrum)
 
 Note: Make Sure you have enabled the SSO plugin in Codoforum Software. 
+
+
+Enter the following details: 
+Assuming your wordpress website is installed at:
+https://myamazingsite.com
+
+Your settings will be like this:
+
+SSO Get User Path:
+https://myamazingsite.com/?codoforum=sso
+
+SSO Login User Path:
+https://myamazingsite.com/wp-login.php
+
+SSO Logout User Path:
+https://myamazingsite.com/wp-login.php?action=logout
+
+SSO Register User Path:
+https://myamazingsite.com/wp-login.php?action=register
+
+
+For any further detailed documentation or help, refer: https://codoforum.com

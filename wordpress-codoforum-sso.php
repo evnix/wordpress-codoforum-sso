@@ -64,41 +64,32 @@ function codoforum_options_page() {
 }
 
 function init_codoforum_sso() {
-    if (is_user_logged_in() && isset($_GET['codoforum']) && $_GET['codoforum'] == 'sso') {
+	if (!isset($_GET['codoforum']) || !$_GET['codoforum'] == 'sso') return;
 
+    /**
+     * 
+     * The SSO client id and secret MUST be same as that set in the Codoforum
+     * SSO plugin settings
+     */
+    $settings = array(
+        "client_id" => get_option('codoforum_clientid', 'codoforum_DEFAULT'),
+        "secret" => get_option('codoforum_secret', 'codoforum_DEFAULT'),
+        "timeout" => 6000
+    );
+    require 'sso.php';
+    $sso = new codoforum_sso($settings);
 
-        require 'sso.php';
-
-        /**
-         * 
-         * The SSO client id and secret MUST be same as that set in the Codoforum
-         * SSO plugin settings
-         */
-        $settings = array(
-            "client_id" => get_option('codoforum_clientid', 'codoforum_DEFAULT'),
-            "secret" => get_option('codoforum_secret', 'codoforum_DEFAULT'),
-            "timeout" => 6000
-        );
-
-        $sso = new codoforum_sso($settings);
-
-        $account = array();
-        /**
-         * 
-         * Here comes your logic to check if the user is logged in or not.
-         * A simple example would be using PHP SESSION
-         */
+    $account = [];
+    if (is_user_logged_in()) {
         $current_user = wp_get_current_user();
         $account['uid'] = $current_user->ID; //Your logged in user's userid
         $account['name'] = $current_user->user_login; //Your logged in user's username
         $account['mail'] = $current_user->user_email; //Your logged in user's email id
-        $account['avatar'] = ''; //not used as of now
+        $account['avatar'] = get_avatar_url($current_user->ID); //not used as of now
+    } 
 
-        $sso->output_jsonp($account); //output above as JSON back to Codoforum
-        exit();
-    } else {
-        
-    }
+    $sso->output_jsonp($account); //output JSON back to Codoforum
+    exit;
 }
 
 add_action('init', 'init_codoforum_sso');
